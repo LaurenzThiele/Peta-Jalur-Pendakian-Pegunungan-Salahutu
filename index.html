@@ -2,60 +2,75 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Download Files</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      padding: 20px;
-      max-width: 600px;
-      margin: auto;
-    }
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 10px 0;
-    }
-    a {
-      display: inline-block;
-      text-decoration: none;
-      background: #007BFF;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
-    }
-    a:hover {
-      background: #0056b3;
-    }
-  </style>
+  <title>Peta Jalur Pendakian</title>
 </head>
-<body>
-  <div class="wave-header">
-    <svg viewBox="0 0 1440 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#009e2f" d="M0,0 C360,120 1080,30 1440,120 L1440,0 L0,0 Z"></path>
-      <path fill="#ffffff" d="M0,0 C360,90 1080,10 1440,90 L1440,0 L0,0 Z" opacity="0.8"></path>
-      <path fill="#c4c4c4" d="M0,0 C360,60 1080,0 1440,60 L1440,0 L0,0 Z" opacity="0.6"></path>
-    </svg>
-  </div>
-  <h1>Download Files</h1>
-  <ul>
-    <li><a href="https://drive.google.com/uc?export=download&id=1Abzjn6td_4GWe4f2NKoqxbt_y4gXXa7B" target="_blank" download>Download File 1</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1eP0ikoKH4PM9HnozHelqCQP9MwGeG53q" target="_blank" download>Download File 2</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1Abzjn6td_4GWe4f2NKoqxbt_y4gXXa7B" target="_blank" download>Download File 3</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1-8TuPoYfbYQ6rsI3G_JnJPsMshutaIJ6" target="_blank" download>Download File 4</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=12yYrv3E-2rxgaa4Q5dcGKSkc6p_umZI_" target="_blank" download>Download File 5</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1APrbiVAptIr6q_unJijwYkEXm0-wgG07" target="_blank" download>Download File 6</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1EMGujpf0nrmC3Mwy3-dChxWYudjXhDMp" target="_blank" download>Download File 7</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1Up1mPiIU7-3Ph5Jfb2P_LEmjZo5LQ30X" target="_blank" download>Download File 8</a></li>
-    <li><a href="https://drive.google.com/uc?export=download&id=1hYRtauMKVBruzW-T0uzB3OG62QMsoUZJ" target="_blank" download>Download File 9</a></li>
-  </ul>
+<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+
+  <img src="logo MEPA.png" alt="Logo MEPA" style="width: 180px; margin: 20px; display: block;" />
+  
+  <h2>Pilih Rute Pendakian</h2>
+
+  <label for="start">Naik via:</label>
+  <select id="start">
+    <option value="">-- Pilih --</option>
+    <option value="Waai">Waai</option>
+    <option value="Tulehu">Tulehu</option>
+    <option value="Hanenu">Hanenu</option>
+  </select>
+
+  <label for="end">Turun via:</label>
+  <select id="end">
+    <option value="">-- Pilih --</option>
+    <option value="Waai">Waai</option>
+    <option value="Tulehu">Tulehu</option>
+    <option value="Hanenu">Hanenu</option>
+  </select>
+
+  <br><br>
+  <button id="downloadBtn" disabled>Download</button>
+
+  <script>
+    const start = document.getElementById("start");
+    const end = document.getElementById("end");
+    const btn = document.getElementById("downloadBtn");
+
+    // Mapping of route to Google Drive viewable links
+    const linkMap = {
+      "Waai": "https://drive.google.com/file/d/1Abzjn6td_4GWe4f2NKoqxbt_y4gXXa7B/view?usp=sharing",
+      "Waai - Tulehu": "https://drive.google.com/file/d/1eP0ikoKH4PM9HnozHelqCQP9MwGeG53q/view?usp=sharing",
+      "Waai - Hanenu": "https://drive.google.com/file/d/1-8TuPoYfbYQ6rsI3G_JnJPsMshutaIJ6/view?usp=sharing",
+      "Tulehu": "https://drive.google.com/file/d/12yYrv3E-2rxgaa4Q5dcGKSkc6p_umZI_/view?usp=sharing",
+      "Tulehu - Waai": "https://drive.google.com/file/d/1APrbiVAptIr6q_unJijwYkEXm0-wgG07/view?usp=sharing",
+      "Tulehu - Hanenu": "https://drive.google.com/file/d/1EMGujpf0nrmC3Mwy3-dChxWYudjXhDMp/view?usp=sharing",
+      "Hanenu": "https://drive.google.com/file/d/1Up1mPiIU7-3Ph5Jfb2P_LEmjZo5LQ30X/view?usp=sharing",
+      "Hanenu - Waai": "https://drive.google.com/file/d/1hYRtauMKVBruzW-T0uzB3OG62QMsoUZJ/view?usp=sharing",
+      "Hanenu - Tulehu": "https://drive.google.com/file/d/1Abzjn6td_4GWe4f2NKoqxbt_y4gXXa7B/view?usp=sharing"
+    };
+
+    function updateBtn() {
+      const s = start.value;
+      const e = end.value;
+
+      btn.disabled = !(s && e);
+    }
+
+    start.addEventListener("change", updateBtn);
+    end.addEventListener("change", updateBtn);
+
+    btn.addEventListener("click", () => {
+      const s = start.value;
+      const e = end.value;
+
+      // Create key for link map
+      const key = (s === e) ? s : `${s} - ${e}`;
+      const url = linkMap[key];
+
+      if (url) {
+        window.open(url, '_blank');
+      } else {
+        alert("Rute tidak ditemukan.");
+      }
+    });
+  </script>
 </body>
 </html>
