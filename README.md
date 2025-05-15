@@ -7,7 +7,7 @@ Pilih rute “Naik via” dan “Turun via”, lalu klik tombol download untuk m
 
 Scan QR code di bawah ini untuk membuka halaman web:
 
-![QR Code](https://github.com/user-attachments/assets/81487c1b-0e69-46a5-8765-06f05ccc49f9)
+![QR Code](https://github.com/user-attachments/assets/4f0700ea-9ecc-4e18-809f-00aaada9c41b)
 
 ---
 
