@@ -2,12 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Peta Jalur Pendakian</title>
-</head>
-<body style="margin: 0; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+  <title>Jalur Pendakian Salahutu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-  <img src="logo MEPA.png" alt="Logo MEPA" style="width: 180px; margin: 20px;" />
-  
+    img {
+      width: 180px;
+      margin: 40px auto 30px auto;
+      display: block;
+    }
+
+    h2 {
+      margin: 10px 0 30px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 15px;
+    }
+
+    select {
+      margin: 10px 0 20px;
+      padding: 8px 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      width: 200px;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #2f855a;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:disabled {
+      background-color: #a0aec0;
+      cursor: not-allowed;
+    }
+
+    button:hover:enabled {
+      background-color: #276749;
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo MEPA.png" alt="Logo MEPA" />
+
   <h2>Pilih Rute Pendakian</h2>
 
   <label for="start">Naik via:</label>
@@ -26,7 +84,6 @@
     <option value="Hanenu">Hanenu</option>
   </select>
 
-  <br><br>
   <button id="downloadBtn" disabled>Download</button>
 
   <script>
@@ -34,7 +91,6 @@
     const end = document.getElementById("end");
     const btn = document.getElementById("downloadBtn");
 
-    // Map from label to Google Drive file ID
     const linkMap = {
       "Hanenu - Waai": "1hYRtauMKVBruzW-T0uzB3OG62QMsoUZJ",
       "Hanenu - Tulehu": "1EMGujpf0nrmC3Mwy3-dChxWYudjXhDMp",
@@ -48,9 +104,7 @@
     };
 
     function updateBtn() {
-      const s = start.value;
-      const e = end.value;
-      btn.disabled = !(s && e);
+      btn.disabled = !(start.value && end.value);
     }
 
     start.addEventListener("change", updateBtn);
@@ -59,12 +113,10 @@
     btn.addEventListener("click", () => {
       const s = start.value;
       const e = end.value;
-
       const key = (s === e) ? s : `${s} - ${e}`;
       const fileId = linkMap[key];
 
       if (fileId) {
-        // Direct download link
         const directLink = `https://drive.google.com/uc?export=download&id=${fileId}`;
         window.open(directLink, '_blank');
       } else {
