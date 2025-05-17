@@ -47,7 +47,7 @@
     }
 
     button {
-      margin: 10px auto;
+      margin: 10px 5px;
       padding: 14px 20px;
       background-color: #7fff00;
       color: black;
@@ -70,18 +70,13 @@
       background-color: #65CC00;
     }
 
-    .section {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .divider {
+    hr {
+      border: none;
       height: 1px;
       background-color: #ccc;
-      margin: 40px 0;
+      margin: 10px 0;
       width: 100%;
-      max-width: 300px;
+      max-width: 320px;
     }
 
     @media (max-width: 480px) {
@@ -100,35 +95,30 @@
 
   <img src="logo MEPA.png" alt="Logo MEPA" />
 
-  <!-- Section 1: Unduh Peta -->
-  <div class="section">
-    <button id="mapBtn">Unduh Peta</button>
-  </div>
+  <h2>Unduh Peta</h2>
+  <button id="mapBtn">Unduh Peta</button>
 
-  <div class="divider"></div>
+  <hr />
 
-  <!-- Section 2: Pilih Rute Pendakian -->
-  <div class="section">
-    <h2>Pilih Rute Pendakian</h2>
+  <h2>Pilih Rute Pendakian</h2>
 
-    <label for="start">Naik via:</label>
-    <select id="start">
-      <option value="">-- Pilih --</option>
-      <option value="Waai">Waai</option>
-      <option value="Tulehu">Tulehu</option>
-      <option value="Hanenu">Hanenu</option>
-    </select>
+  <label for="start">Naik via:</label>
+  <select id="start">
+    <option value="">-- Pilih --</option>
+    <option value="Waai">Waai</option>
+    <option value="Tulehu">Tulehu</option>
+    <option value="Hanenu">Hanenu</option>
+  </select>
 
-    <label for="end">Turun via:</label>
-    <select id="end">
-      <option value="">-- Pilih --</option>
-      <option value="Waai">Waai</option>
-      <option value="Tulehu">Tulehu</option>
-      <option value="Hanenu">Hanenu</option>
-    </select>
+  <label for="end">Turun via:</label>
+  <select id="end">
+    <option value="">-- Pilih --</option>
+    <option value="Waai">Waai</option>
+    <option value="Tulehu">Tulehu</option>
+    <option value="Hanenu">Hanenu</option>
+  </select>
 
-    <button id="downloadBtn" disabled>Unduh GPX</button>
-  </div>
+  <button id="downloadBtn" disabled>Unduh GPX</button>
 
   <script>
     const start = document.getElementById("start");
