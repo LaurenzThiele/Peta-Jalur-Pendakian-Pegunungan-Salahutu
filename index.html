@@ -1,47 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jalur Pendakian Salahutu</title>
+  <link rel="icon" type="image/png" href="logo MEPA.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 0 20px;
       font-family: 'Inter', sans-serif;
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
+      min-height: 100vh;
     }
 
     img {
-      width: 180px;
-      margin: 40px auto 30px auto;
-      display: block;
+      width: 150px;
+      margin: 40px auto 20px;
     }
 
     h2 {
-      margin: 10px 0 30px;
+      margin: 10px 0 20px;
       color: #333;
+      font-size: 1.5em;
     }
 
     label {
       font-weight: 600;
       margin-top: 15px;
+      display: block;
     }
 
     select {
       margin: 10px 0 20px;
-      padding: 8px 12px;
+      padding: 10px;
       font-size: 16px;
       border-radius: 6px;
       border: 1px solid #ccc;
-      width: 200px;
+      width: 100%;
+      max-width: 300px;
     }
 
     button {
-      margin-top: 20px;
-      padding: 16px 24px;
+      margin: 10px 5px;
+      padding: 14px 20px;
       background-color: #7fff00;
       color: black;
       border: none;
@@ -49,6 +55,8 @@
       font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      width: 100%;
+      max-width: 300px;
     }
 
     button:disabled {
@@ -59,6 +67,26 @@
 
     button:hover:enabled {
       background-color: #65CC00;
+    }
+
+    #mapBtn {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    #mapBtn:hover {
+      background-color: #2563eb;
+    }
+
+    @media (max-width: 480px) {
+      h2 {
+        font-size: 1.3em;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 12px 16px;
+      }
     }
   </style>
 </head>
@@ -84,12 +112,14 @@
     <option value="Hanenu">Hanenu</option>
   </select>
 
-  <button id="downloadBtn" disabled>Download</button>
+  <button id="downloadBtn" disabled>Download Rute</button>
+  <button id="mapBtn">Download Peta Salahutu</button>
 
   <script>
     const start = document.getElementById("start");
     const end = document.getElementById("end");
     const btn = document.getElementById("downloadBtn");
+    const mapBtn = document.getElementById("mapBtn");
 
     const linkMap = {
       "Hanenu - Waai": "1hYRtauMKVBruzW-T0uzB3OG62QMsoUZJ",
@@ -122,6 +152,12 @@
       } else {
         alert("Rute tidak ditemukan.");
       }
+    });
+
+    mapBtn.addEventListener("click", () => {
+      const mapId = "1K5rVa-4CL8qQ6rpWpHW7kc4m8GfD27hB";
+      const directMapLink = `https://drive.google.com/uc?export=download&id=${mapId}`;
+      window.open(directMapLink, '_blank');
     });
   </script>
 </body>
