@@ -11,4 +11,4 @@ Scan QR code di bawah ini untuk membuka halaman web:
 
 ---
 
-Peta disediakan melalui tautan Google Drive dan dapat langsung diunduh tanpa perlu login atau izin akses tambahan..
+Peta disediakan melalui tautan Google Drive dan dapat langsung diunduh tanpa perlu login atau izin akses tambahan.
