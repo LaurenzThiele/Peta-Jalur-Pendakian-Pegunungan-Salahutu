@@ -1,6 +1,6 @@
 # Peta Jalur Pendakian Pegunungan Salahutu
 
-Halaman web interaktif untuk memilih dan mengunduh peta jalur pendakian Gunung Salahutu.
+Halaman web interaktif sederhana untuk memilih dan mengunduh peta jalur pendakian Gunung Salahutu.
 Cukup pilih rute "Naik via" dan "Turun via", lalu klik tombol Unduh GPX untuk mendapatkan file peta jalur yang sesuai.
 
 ---
