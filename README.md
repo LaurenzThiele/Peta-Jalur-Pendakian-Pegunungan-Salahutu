@@ -6,6 +6,12 @@ Simple interactive web page for selecting and downloading hiking route maps for 
 
 ---
 
+## Live Access / *Akses Langsung*
+
+https://laurenzthiele.github.io/Peta-Jalur-Pendakian-Pegunungan-Salahutu/
+
+---
+
 ## Data & Mapping / *Data & Pemetaan*
 
 Route data was collected using a **Suunto Baro 9** GPS watch, ensuring accurate elevation and track recording in mountainous terrain. The final map was processed and created using **QGIS** for spatial analysis and visualization.
@@ -20,7 +26,7 @@ Scan the QR code below to open the web application:
 
 *Pindai QR code di bawah ini untuk membuka aplikasi web:*
 
-![QR Code](https://github.com/user-attachments/assets/4f0700ea-9ecc-4e18-809f-00aaada9c41b)
+<img width="450" height="450" alt="qrcode_laurenzthiele github io" src="https://github.com/user-attachments/assets/69de4703-83f3-4b1c-b8ce-3e221e51a54f" />
 
 ---
 
